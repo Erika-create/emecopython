@@ -19,7 +19,7 @@ s2 = input("数学への意欲（A=好き、B=普通、C=苦手）：")
 if s2 == "A":
     score_core_cs += 4
     score_data_sci += 3
-elif n2 == "B":
+elif s2 == "B":
     score_data_sci += 2
     score_creative += 2
 else:
@@ -58,7 +58,7 @@ print("【診断結果】おすすめの進路")
 if max_score == score_core_cs:
     print("理系CSルート：")
     print("高校では理系を選び、数IIIや物理を学びましょう。\n大学では情報理工学部などを目指し、システミの根本を学ぶのが最適です。")
-if max_score == score_data_sci:
+elif max_score == score_data_sci:
     print("文理融合のデータサイエンス：")
     print("数IIIは必要ないので、高校では数Iや数II、統計学に集中しましょう。")
     print("大学ではデータサイエンス学部や社会情報学部で、ITを社会に活かす術を学びましょう。")
