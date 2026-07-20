@@ -45,6 +45,30 @@ elif s4 == 4 or s4 == 5:
 else:
     score_data_sci += 5
 
+print("何かを作るとしたら、どっちにワクワクする？")
+s5 = int(input("1=パズルのような謎解きや、仕組み・ロジックを考えること、2=イラストを描く、動画を作る、見た目をデザインすること"))
+if s5 == 1:
+    score_core_cs += 4
+    score_data_sci += 3
+else:
+    score_creative += 4
+
+print("\nスマホのアプリやゲームがバグったり、日常のルールで不便なことがあったとき、どう思う？")
+s6 = int(input("1=「なんでこうなるんだろう？」と原因を突き止めたり、裏側の仕組みを調べたくなる。\n2=「もっとこうなれば使いやすいのに！」と、新しいアイデアや改善策を考える方が楽しい。"))
+if s6 == 1:
+    score_core_cs += 3
+else:
+    score_data_sci += 3
+    score_creative += 3
+
+print("\n学校の探究学習や文化祭の準備、趣味の作業で、一番時間を忘れて熱中できる瞬間はどれ？")
+s7 = int(input("1=1人で黙々と作業して、パズルを解くように形を完成させていくとき（個人作業）。\n2=友達とアイデアを出し合ったり、全体の計画を立てて進め方をまとめるとき（チーム）。"))
+if s7 == 1:
+    score_core_cs += 3
+    score_data_sci += 2
+else:
+    score_creative += 3
+
 
 max_score = 0
 if score_core_cs >= score_data_sci and score_core_cs >= score_creative:
