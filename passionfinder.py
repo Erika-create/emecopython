@@ -1,44 +1,67 @@
-
 #main
-subList = ["Maths", "Physics", "Biology", "Chemistry", "Computer Science"]
 jobList = ["アプリ開発", "AI研究", "ゲーム制作", "Webデザイン", "UI/UX", "ビジネス", "マーケティング", "データ分析", "社会問題の解決"]
 print("これはCSに興味のある女子高生のための大学での科目選択シミュレーターです。")
+score_core_cs = 0
+score_data_sci = 0
+score_creative = 0
 
-s1 = input("現在の文理への興味を教えて（1=理系、2=文系、3=わからない）：")
-n1 = 0
+s1 = int(input("現在の文理への興味を教えて（1=理系、2=文系、3=わからない）："))
 if s1 == 1:
-    n1 = 5
-elif s1 == 2:
-    n1 = 1
+    score_core_cs += 3
+elif s1 == 3:
+    score_data_sci += 1
+    score_creative += 3
 else:
-    n1 = 3
+    score_data_sci += 2
+    score_creative += 2
 
-s2 = input("数学への意欲（1=好き、2=普通、3=苦手）：")
-n2 = Z
-if s2 == 1:
-    n2 = A
-elif s2 == 2:
-    n2 = B
+s2 = input("数学への意欲（A=好き、B=普通、C=苦手）：")
+if s2 == "A":
+    score_core_cs += 4
+    score_data_sci += 3
+elif n2 == "B":
+    score_data_sci += 2
+    score_creative += 2
 else:
-    n2 = C
+    score_core_cs -= 5 #CS should not be selected if not good at maths
+    score_creative += 4
 
-n3 = 0
 s3 = input("数IIIは取ろうと思う・または取っている？（y/n）：")
 if s3 == "y":
-    n3 = A
+    score_core_cs += 5
+    score_data_sci += 2
 else:
-    n3 = B #B and C, does not matter
+    score_core_cs -= 5 #if no mathsIII, not much chance in core cs
 
 print("将来やってみたいことは？")
 for i in range(len(jobList)):
-    print("・", jobList[i], "=", i+1)
-s4 = input()
-
-n4 = Z
+    print("・", i+1, "=", jobList[i])
+s4 = int(input())
 if s4 == 1 or s4 == 2 or s4 == 3:
-    n4 = A
+    score_core_cs += 3
+    score_creative += 2
 elif s4 == 4 or s4 == 5:
-    n4 = B
+    score_creative += 5
 else:
-    n4 = C
+    score_data_sci += 5
 
+
+max_score = 0
+if score_core_cs >= score_data_sci and score_core_cs >= score_creative:
+    max_score = score_core_cs
+elif score_data_sci >= score_core_cs and score_data_sci >= score_creative:
+    max_score = score_data_sci
+else:
+    max_score = score_creative
+
+print("【診断結果】おすすめの進路")
+if max_score == score_core_cs:
+    print("理系CSルート：")
+    print("高校では理系を選び、数IIIや物理を学びましょう。\n大学では情報理工学部などを目指し、システミの根本を学ぶのが最適です。")
+if max_score == score_data_sci:
+    print("文理融合のデータサイエンス：")
+    print("数IIIは必要ないので、高校では数Iや数II、統計学に集中しましょう。")
+    print("大学ではデータサイエンス学部や社会情報学部で、ITを社会に活かす術を学びましょう。")
+else:
+    print("クリエイティブなルート：")
+    print("数IIIなどは必要ありません。大学では情報デザイン学科やメディア学部で、Web・UI/UXなどを学びましょう。")
