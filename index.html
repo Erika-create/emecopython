@@ -16,9 +16,9 @@
             </div>
 
             <header class="header">
-                <span class="badge">高校生向け進路診断</span>
-                <h1><strong>CSの科目選択</strong></h1>
-                <p class="subtitle">あなたにぴったりのコンピューターサイエンスの学び方や高校での科目選択ルートを見つける診断</p>
+                <span class="badge" data-i18n="badge">高校生向け進路診断</span>
+                <h1 data-i18n="title">CS科目選択・進路シミュレーター</h1>
+                <p class="subtitle" data-i18n="subtitle">あなたにぴったりのコンピューターサイエンスの学び方や高校での科目選択ルートを見つける診断</p>
             </header>
 
             <form id="quizForm">
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="question-card">
-                    <div class="question-title" data-i18n="q5_title">5. 何かを作るとしたら、どっちにワクワクする？</div>
+                    <div class="question-title" data-i18n="q5_title">5. 何かを『作る』としたら、どっちにワクワクする？</div>
                     <div class="options">
                         <label class="option-label"><input type="radio" name="s5" value="1" required> <span data-i18n="q5_o1">パズルのような謎解きや、仕組み・ロジックを考えること</span></label>
                         <label class="option-label"><input type="radio" name="s5" value="2"> <span data-i18n="q5_o2">イラストを描く、動画を作る、見た目をデザインすること</span></label>
@@ -77,7 +77,7 @@
                     <div class="question-title" data-i18n="q6_title">6. スマホのアプリがバグったり不便な時、どう思う？</div>
                     <div class="options">
                         <label class="option-label"><input type="radio" name="s6" value="1" required> <span data-i18n="q6_o1">「なんでこうなるんだろう？」と原因や裏側の仕組みを調べたくなる</span></label>
-                        <label class="option-label"><input type="radio" name="s6" value="2"> <span data-i18n="q6_o2">「もっとこうなれば使いやすいのに」と新しいアイデアを考える方が楽しい</span></label>
+                        <label class="option-label"><input type="radio" name="s6" value="2"> <span data-i18n="q6_o2">「もっとこうなれば使いやすいのに！」と新しいアイデアを考える方が楽しい</span></label>
                     </div>
                 </div>
 
@@ -89,7 +89,7 @@
                     </div>
                 </div>
 
-                <button type="button" class="submit-btn" onclick="calculateResult()">診断結果を見る</button>
+                <button type="button" class="submit-btn" onclick="calculateResult()" data-i18n="submit_btn">診断結果を見る</button>
             </form>
 
             <div id="result" class="result-card">
