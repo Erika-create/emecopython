@@ -176,3 +176,33 @@ h1 {
     transform: translateY(0);
   }
 }
+
+.lang-switcher {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.lang-btn {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #64748b;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  background-color: #e2e8f0;
+}
+
+.lang-btn.active {
+  background-color: #ff6b4a;
+  color: #ffffff;
+  border-color: #ff6b4a;
+  box-shadow: 0 2px 8px rgba(255, 107, 74, 0.3);
+}

@@ -10,6 +10,11 @@
     </head>
     <body>
         <div class="container">
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn active" id="btn-ja" onclick="setLanguage('ja')">JP</button>
+                <button type="button" class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+            </div>
+
             <header class="header">
                 <span class="badge">高校生向け進路診断</span>
                 <h1><strong>CSの科目選択</strong></h1>
@@ -18,69 +23,69 @@
 
             <form id="quizForm">
                 <div class="question-card">
-                    <div class="question-title">1. 現在の文理への興味を教えて</div>
+                    <div class="question-title" data-i18n="q1_title">1. 現在の文理への興味を教えてください</div>
                     <div class="options">
-                        <label class="option-label"><input type="radio" name="s1" value="1" required> 理系</label>
-                        <label class="option-label"><input type="radio" name="s1" value="2"> 文系</label>
-                        <label class="option-label"><input type="radio" name="s1" value="3"> まだわからない</label>
+                        <label class="option-label"><input type="radio" name="s1" value="1" required> <span data-i18n="q1_o1">理系</span></label>
+                        <label class="option-label"><input type="radio" name="s1" value="2"> <span data-i18n="q1_o2">文系</span></label>
+                        <label class="option-label"><input type="radio" name="s1" value="3"> <span data-i18n="q1_o3">まだわからない</span></label>
                     </div>
                 </div>
 
                 <div class="question-card">
-                    <div class="question-title">2. 数学への意欲はどのくらい？</div>
+                    <div class="question-title" data-i18n="q2_title">2. 数学への意欲はどのくらい？</div>
                     <div class="options">
-                        <label class="option-label"><input type="radio" name="s2" value="A" required> 好き</label>
-                        <label class="option-label"><input type="radio" name="s2" value="B" required> 普通</label>
-                        <label class="option-label"><input type="radio" name="s2" value="C" required> 苦手</label>
+                        <label class="option-label"><input type="radio" name="s2" value="A" required> <span data-i18n="q2_o1">好き・得意</span></label>
+                        <label class="option-label"><input type="radio" name="s2" value="B"> <span data-i18n="q2_o2">普通</span></label>
+                        <label class="option-label"><input type="radio" name="s2" value="C"> <span data-i18n="q2_o3">苦手</span></label>
                     </div>
                 </div>
 
                 <div class="question-card">
-                    <div class="question-title">3. 数IIIは取ろうと思う・または取っている？</div>
+                    <div class="question-title" data-i18n="q3_title">3. 数IIIは取ろうと思う・または取っている？</div>
                     <div class="options">
-                        <label class="option-label"><input type="radio" name="s3" value="y" required> はい（取る / 取っている）</label>
-                        <label class="option-label"><input type="radio" name="s3" value="n" required> いいえ（取らない）</label>
+                        <label class="option-label"><input type="radio" name="s3" value="y" required> <span data-i18n="q3_o1">はい（取る / 取っている）</span></label>
+                        <label class="option-label"><input type="radio" name="s3" value="n"> <span data-i18n="q3_o2">いいえ（取らない）</span></label>
                     </div>
                 </div>
 
                 <div class="question-card">
-                    <div class="question-title">4. 将来やってみたいことは？</div>
+                    <div class="question-title" data-i18n="q4_title">4. 将来やってみたいことは？</div>
                     <div class="select-wrapper">
                         <select id="s4" class="custom-select">
-                            <option value="1">アプリ開発</option>
-                            <option value="2">AI研究</option>
-                            <option value="3">ゲーム制作</option>
-                            <option value="4">Webデザイン</option>
-                            <option value="5">UI/UXデザイン</option>
-                            <option value="6">ビジネス企画</option>
-                            <option value="7">マーケティング</option>
-                            <option value="8">データ分析</option>
-                            <option value="9">社会問題の解決</option>
+                            <option value="1" data-i18n="q4_o1">アプリ開発</option>
+                            <option value="2" data-i18n="q4_o2">AI研究</option>
+                            <option value="3" data-i18n="q4_o3">ゲーム制作</option>
+                            <option value="4" data-i18n="q4_o4">Webデザイン</option>
+                            <option value="5" data-i18n="q4_o5">UI/UXデザイン</option>
+                            <option value="6" data-i18n="q4_o6">ビジネス企画</option>
+                            <option value="7" data-i18n="q4_o7">マーケティング</option>
+                            <option value="8" data-i18n="q4_o8">データ分析</option>
+                            <option value="9" data-i18n="q4_o9">社会問題の解決</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="question-card">
-                    <div class="question-title">5. 何かを作るとしたら、どっちにワクワクする？</div>
+                    <div class="question-title" data-i18n="q5_title">5. 何かを作るとしたら、どっちにワクワクする？</div>
                     <div class="options">
-                        <label class="option-label"><input type="radio" name="s5" value="1" required> パズルのような謎解きや、仕組み・ロジックを考えること</label>
-                        <label class="option-label"><input type="radio" name="s5" value="2"> イラストを描く、動画を作る、見た目をデザインすること</label>
+                        <label class="option-label"><input type="radio" name="s5" value="1" required> <span data-i18n="q5_o1">パズルのような謎解きや、仕組み・ロジックを考えること</span></label>
+                        <label class="option-label"><input type="radio" name="s5" value="2"> <span data-i18n="q5_o2">イラストを描く、動画を作る、見た目をデザインすること</span></label>
                     </div>
                 </div>
 
                 <div class="question-card">
-                    <div class="question-title">6. スマホのアプリがバグったり不便な時、どう思う？</div>
+                    <div class="question-title" data-i18n="q6_title">6. スマホのアプリがバグったり不便な時、どう思う？</div>
                     <div class="options">
-                        <label class="option-label"><input type="radio" name="s6" value="1" required> 「なんでこうなるんだろう？」と原因や裏側の仕組みを調べたくなる</label>
-                        <label class="option-label"><input type="radio" name="s6" value="2"> 「もっとこうなれば使いやすいのに」と新しいアイデアを考える方が楽しい</label>
+                        <label class="option-label"><input type="radio" name="s6" value="1" required> <span data-i18n="q6_o1">「なんでこうなるんだろう？」と原因や裏側の仕組みを調べたくなる</span></label>
+                        <label class="option-label"><input type="radio" name="s6" value="2"> <span data-i18n="q6_o2">「もっとこうなれば使いやすいのに」と新しいアイデアを考える方が楽しい</span></label>
                     </div>
                 </div>
 
                 <div class="question-card">
-                    <div class="question-title">7. 一番時間を忘れて熱中できる瞬間はどれ？</div>
+                    <div class="question-title" data-i18n="q7_title">7. 一番時間を忘れて熱中できる瞬間はどれ？</div>
                     <div class="options">
-                        <label class="option-label"><input type="radio" name="s7" value="1" required> 1人で黙々と作業して、パズルを解くように形を完成させていくとき（個人作業）</label>
-                        <label class="option-label"><input type="radio" name="s7" value="2"> 友達とアイデアを出し合ったり、全体の計画を立てて進め方をまとめるとき（チーム）</label>
+                        <label class="option-label"><input type="radio" name="s7" value="1" required> <span data-i18n="q7_o1">1人で黙々と作業して、パズルを解くように形を完成させていくとき（個人作業）</span></label>
+                        <label class="option-label"><input type="radio" name="s7" value="2"> <span data-i18n="q7_o2">友達とアイデアを出し合ったり、全体の計画を立てて進め方をまとめるとき（チーム）</span></label>
                     </div>
                 </div>
 
@@ -88,7 +93,7 @@
             </form>
 
             <div id="result" class="result-card">
-                <h2 class="result-title">【診断結果】おすすめの進路</h2>
+                <h2 class="result-title" data-i18n="result_title">【診断結果】おすすめの進路</h2>
                 <div id="resultContent"></div>
             </div>
         </div>
